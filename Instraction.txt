@@ -1,0 +1,70 @@
+Quetions:
+
+Write an inheritance hierarcy for classes Rectangle,Circle and Triangle.
+Create an abstract class name shaped as a super class of the hierarcy. Write
+an application that instantiates ov=bject of your classes and ouput of their areas.
+
+
+Solution:
+
+abstract class Shaped {
+    double dim1,dim2;
+    
+    Shaped(double dim1, double dim2){
+        this.dim1=dim1;
+        this.dim2=dim2;
+    }
+     abstract void area();
+}
+
+
+public class Rectangle extends Shaped{
+    Rectangle(double dim1, double dim2){
+        super(dim1,dim2);
+    }
+    
+    @Override
+    void area(){
+        double result = dim1*dim2;
+        System.out.println("The rectangle area is: "+result);
+    }
+}
+
+
+public class Triangle extends Shaped {
+    Triangle(double dim1, double dim2){
+        super(dim1,dim2);
+    }
+    @Override
+    void area(){
+        double result = 0.5* dim1*dim2; 
+        System.out.println("The Triangle area is: "+result);
+    }
+}
+
+
+public class Circle extends Shaped {
+    Circle(double r){
+        super(r,r);
+    }
+    @Override
+    void area(){
+        double result = Math.PI* dim1*dim2;
+        System.out.println("The Circle result is: "+result);
+    }
+}
+
+public class text {
+   public static void main(String[] args){
+       Shaped shape;
+       shape =   new Rectangle(4,6);
+       shape.area();
+       
+       shape =   new Triangle(4,6);
+       shape.area();
+       
+       shape =   new  Circle(4);
+       shape.area();
+   }  
+}
+
